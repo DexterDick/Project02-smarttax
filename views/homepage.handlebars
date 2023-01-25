@@ -1,0 +1,9 @@
+<h2>I am the homepage! :)</h2>
+
+{{#if taxReports.length}}
+    <p>
+        {{#each taxReports as |taxReport|}}
+            {{taxReport.id}} {{taxReport.year}} {{taxReport.income}}
+        {{/each}}
+    </p>
+{{/if}}
