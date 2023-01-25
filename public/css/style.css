@@ -1,0 +1,30 @@
+:root {
+    --green: #abd699;
+    --yellow: #ffe26a;
+    --teal: #73c9b7;
+    --lightblue: #c7dfcd;
+    --navy: #15123f;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, var(--green), var(--teal));
+}
+
+.bg-navbar {
+    background-image: linear-gradient(to right, var(--teal), var(--green));
+}
+
+.form {
+    background: var(--green);
+    border-radius: 25px;
+}
+
+.btn-user {
+    background: var(--yellow);
+}
