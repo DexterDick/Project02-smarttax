@@ -27,6 +27,17 @@ router.get('/', async (request, response) => {
     }
 });
 
+router.get('/taxInputs', async (request, response) => {
+    try {
+        // Pass serialized data and session flag into template
+        response.render('taxInputs', {
+
+        });
+    } catch (error) {
+        response.status(500).json(error);
+    }
+});
+
 router.get('/taxReport/:id', async (request, response) => {
     try {
         const taxReportData = await TaxReport.findByPk(request.params.id, {
@@ -77,6 +88,10 @@ router.get('/login', (request, response) => {
     }
 
     response.render('login');
+});
+
+router.get('/accountCreation', (request, response) => {
+    response.render('accountCreation');
 });
 
 module.exports = router;
