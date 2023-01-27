@@ -15,7 +15,11 @@
 } */
 
 body {
-    background-image: linear-gradient(to bottom right, var(--green), var(--teal));
+    background-image: linear-gradient(
+        to bottom right,
+        var(--green),
+        var(--teal)
+    );
 }
 
 .form {
@@ -33,17 +37,17 @@ body {
     color: var(--navy);
 }
 
-.btn-user:hover{
-    color:white ;
+.btn-user:hover {
+    color: white;
     background-color: var(--yellow);
     text-shadow: 0 0 5px #fff, 0 0 10px var(--yellow);
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
     text-shadow: 0 0 5px #fff, 0 0 10px var(--yellow);
 }
 
-.navbar-brand:hover > i{
+.navbar-brand:hover > i {
     animation: spin 3s linear infinite;
 }
 
@@ -95,12 +99,23 @@ tr:nth-child(even) {
 
 @keyframes spin {
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
     button.full-width {
-        width: 100%;  
+        width: 100%;
+    }
+}
+
+@media (max-width: 1330px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero img {
+        margin-left: 0;
+        margin-top: 3rem;
+        max-width: 100%;
     }
 }
