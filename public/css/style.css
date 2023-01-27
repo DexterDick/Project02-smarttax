@@ -8,13 +8,8 @@
     --navy: #15123f;
 }
 
-/* * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-} */
-
 body {
+    background-size: auto 100vh;
     background-image: linear-gradient(to bottom right, var(--green), var(--teal));
 }
 
@@ -91,7 +86,7 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-}
+} 
 
 @keyframes spin {
     100% {
