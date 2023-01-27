@@ -1,5 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+:root {
+    --green: #abd699;
+    --yellow: #ffe26a;
+    --teal: #73c9b7;
+    --lightblue: #c7dfcd;
+    --navy: #15123f;
+}
+
+/* * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} */
+
+body {
+    background-image: linear-gradient(to bottom right, var(--green), var(--teal));
+}
+
+.form {
+    background: var(--lightblue);
+    border-radius: 15px;
+    color: var(--navy);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow);
+}
+
+.btn-user {
+    background: var(--yellow);
+    color: var(--navy);
+}
+
+.btn-user:hover{
+    color:white ;
+    background-color: var(--yellow);
+    text-shadow: 0 0 5px #fff, 0 0 10px var(--yellow);
+}
+
+.navbar-brand:hover{
+    text-shadow: 0 0 5px #fff, 0 0 10px var(--yellow);
+}
+
+.navbar-brand:hover > i{
+    animation: spin 3s linear infinite;
+}
+
 .slogan {
     margin-top: 7rem;
     font-size: 5rem;
@@ -29,6 +76,7 @@
     max-width: 720px;
     min-width: 520px;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -43,4 +91,16 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+@keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@media(max-width: 576px) {
+    button.full-width {
+        width: 100%;  
+    }
 }
