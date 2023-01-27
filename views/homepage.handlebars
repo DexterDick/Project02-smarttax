@@ -1,9 +1,55 @@
-<h2>I am the homepage! :)</h2>
+<section class="hero">
+    <div>
+        <h2 class="slogan">We make taxes look easy</h2>
+        <P>SmartTax will help you see what your refund could look like. Tax can
+            be complicated we make it look easy.
+        </P>
+        <table>
+            <tr>
+                <th>2021 Federal income tax brackets*</th>
+                <th>2021 Federal income tax rates</th>
+            </tr>
+            <tr>
+                <td>$49,020 or less</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>$49,020 to $98,040</td>
+                <td>20.5%</td>
+            </tr>
+            <tr>
+                <td>$98,040 to $151,978</td>
+                <td>26%</td>
+            </tr>
+            <tr>
+                <td>$151,978 to $216,511</td>
+                <td>29%</td>
+            </tr>
+            <tr>
+                <td>More than $216,511</td>
+                <td>33%</td>
+            </tr>
+            <tr>
+                <td colspan="2">* These amounts are adjusted for inflation and
+                    other factors in each tax year.</td>
+            </tr>
+        </table>
+        <p class="color">Get your fee tax report today.</p>
+        <a href="/login" class="btn btn-primary">Get Started - its free</a></div>
+    <div>
+        <img
+            src="/images/businessman.jpg"
+            alt="business man holding a tax sign"
+        />
+    </div>
+</section>
 
 {{#if taxReports.length}}
     <p>
         {{#each taxReports as |taxReport|}}
-            {{taxReport.id}} {{taxReport.year}} {{taxReport.income}}
+            {{taxReport.id}}
+            {{taxReport.year}}
+            {{taxReport.income}}
         {{/each}}
     </p>
 {{/if}}
