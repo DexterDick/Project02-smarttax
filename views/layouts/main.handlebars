@@ -32,24 +32,18 @@
             <li class="nav-item active">
               <a class="nav-link" href="/taxInputs">New Tax Report</a>
             </li>
-              <li class="nav-item">
-                  <a class="nav-link active" href="/taxOutputs">Tax Report</a>
-              </li>
+            <li class="nav-item">
+                  <a class="nav-link" href="/taxOutputs">Tax Report</a>
+            </li>
             <!-- Conditionally render accountCreation or account links -->
             {{#if logged_in}}
               <li class="nav-item active">
                 <a class="nav-link" href="/account">Account</a>
               </li>
-                <li class="nav-item">
-                    <button class="btn btn-link nav-link active" id="logout">Logout</button>
-                </li>
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/accountCreation">Make an Account</a>
               </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/login">Login</a>
-                </li>
             {{/if}}
           </ul>
         </div>
