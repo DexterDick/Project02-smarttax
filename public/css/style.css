@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.slogan {
+    margin-top: 7rem;
+    font-size: 5rem;
+    color: green;
+}
+
+.hero {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hero p {
+    margin-top: 3rem;
+    font-size: 3rem;
+}
+
+.color {
+    color: red;
+}
+
+.hero img {
+    margin-left: 10rem;
+    height: auto;
+    width: 100%;
+    /* even more control with max-width */
+    max-width: 720px;
+    min-width: 520px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    font-size: 1.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
