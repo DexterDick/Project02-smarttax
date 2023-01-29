@@ -35,7 +35,8 @@
             </tr>
         </table>
         <p class="color">Get your fee tax report today.</p>
-        <a href="/accountCreation" class="btn btn-primary">Get Started - its free</a></div>
+        <a href="/accountCreation" class="btn btn-primary">Get Started - its
+            free</a></div>
     <div>
         <img
             src="/images/businessman.jpg"
@@ -43,13 +44,3 @@
         />
     </div>
 </section>
-
-{{#if taxReports.length}}
-    <p>
-        {{#each taxReports as |taxReport|}}
-            {{taxReport.id}}
-            {{taxReport.year}}
-            {{taxReport.income}}
-        {{/each}}
-    </p>
-{{/if}}
