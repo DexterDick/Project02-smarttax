@@ -43,13 +43,3 @@
         />
     </div>
 </section>
-
-{{#if taxReports.length}}
-    <p>
-        {{#each taxReports as |taxReport|}}
-            {{taxReport.id}}
-            {{taxReport.year}}
-            {{taxReport.income}}
-        {{/each}}
-    </p>
-{{/if}}
