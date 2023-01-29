@@ -10,22 +10,44 @@
 
 body {
     background-size: auto 100vh;
-    background-image: linear-gradient(to bottom right, var(--green), var(--teal));
+    background-image: linear-gradient(
+        to bottom right,
+        var(--green),
+        var(--teal)
+    );
+}
+
+.container {
+    /* added to control width of site on large screens */
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .form {
+    margin: 30% auto 0;
+    width: 50%;
     background: var(--lightblue);
     border-radius: 15px;
     color: var(--navy);
     border-style: solid;
     border-width: 1px;
     border-color: #fff;
-    box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow); */
 }
 
 .btn-user {
-    background: var(--yellow);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    background: var(--teal);
     color: var(--navy);
+    transition: all 0.5s;
 }
 
 .btn-user:hover {
@@ -50,13 +72,13 @@ body {
 
 .hero {
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .hero p {
     margin-top: 3rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .color {
@@ -64,12 +86,17 @@ body {
 }
 
 .hero img {
-    margin-left: 10rem;
+    margin-top: 15rem;
     height: auto;
     width: 100%;
     /* even more control with max-width */
-    max-width: 720px;
-    min-width: 520px;
+    max-width: 820px;
+    min-width: 320px;
+}
+.tax-form img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
 }
 
 table {
@@ -86,7 +113,11 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-} 
+}
+
+.flex {
+    display: flex;
+}
 
 @keyframes spin {
     100% {
