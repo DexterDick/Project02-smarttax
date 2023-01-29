@@ -24,18 +24,30 @@ body {
 }
 
 .form {
+    margin: 30% auto 0;
+    width: 50%;
     background: var(--lightblue);
     border-radius: 15px;
     color: var(--navy);
     border-style: solid;
     border-width: 1px;
     border-color: #fff;
-    box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow); */
 }
 
 .btn-user {
-    background: var(--yellow);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    background: var(--teal);
     color: var(--navy);
+    transition: all 0.5s;
 }
 
 .btn-user:hover {
