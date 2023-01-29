@@ -21,6 +21,21 @@ const taxInputFormHandler = async (event) => {
     }
 };
 
+const calculate = async (event) => {
+    event.preventDefault();
+
+    const year = document.querySelector('#inputYear').value.trim();
+    const income = document.querySelector('#inputIncome').value.trim();
+
+    document.querySelector('#outputYear').value = year;
+    document.querySelector('#outputIncome').value = income;
+
+};
+
 document
     .querySelector('.new-taxReport-form')
     .addEventListener('submit', taxInputFormHandler);
+
+document
+    .querySelector('#submit')
+    .addEventListener('click', calculate);
