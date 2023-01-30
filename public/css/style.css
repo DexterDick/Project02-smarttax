@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Poppins:wght@400;600&display=swap");
 
 :root {
     --green: #abd699;
@@ -15,6 +15,7 @@ body {
         var(--green),
         var(--teal)
     );
+    font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -23,8 +24,9 @@ body {
     margin: 0 auto;
 }
 
-.form {
-    margin: 30% auto 0;
+.form,
+.new-taxReport-form {
+    margin: 10% auto 0;
     width: 50%;
     background: var(--lightblue);
     border-radius: 15px;
@@ -34,6 +36,11 @@ body {
     border-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     /* box-shadow: 0 0 10px #fff, 0 0 20px var(--yellow); */
+}
+.new-taxReport-form {
+    width: 80%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .btn-user {
@@ -65,8 +72,10 @@ body {
 }
 
 .slogan {
+    font-family: "Poppins", sans-serif;
     margin-top: 7rem;
     font-size: 5rem;
+    font-weight: 600;
     color: green;
 }
 
@@ -78,6 +87,7 @@ body {
 
 .hero p {
     margin-top: 3rem;
+    font-weight: 600;
     font-size: 2rem;
 }
 
