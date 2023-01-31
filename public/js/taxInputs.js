@@ -13,11 +13,11 @@ const taxInputFormHandler = async (event) => {
             },
         });
 
-        if (response.ok) {
+/*        if (response.ok) {
             document.location.replace('/taxOutputs');
         } else {
             alert('Failed to create tax report');
-        }
+        }*/
     }
 };
 
@@ -59,6 +59,21 @@ const calculate = async (event) => {
     $('#yearSlot').text(year);
     $('#taxSlot').text(fedIncomeTax);
 
+    if (year && income) {
+        const response = await fetch(`/api/taxReports`, {
+            method: 'POST',
+            body: JSON.stringify({ year, income }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        /*        if (response.ok) {
+                    document.location.replace('/taxOutputs');
+                } else {
+                    alert('Failed to create tax report');
+                }*/
+    }
 };
 
 $('.new-taxReport-form').submit(calculate);
