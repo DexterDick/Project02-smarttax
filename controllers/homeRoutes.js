@@ -29,6 +29,15 @@ router.get("/", async (request, response) => {
     }
 });
 
+router.get("/taxInputs", async (request, response) => {
+    try {
+        // Pass serialized data and session flag into template
+        response.render("taxInputs", {});
+    } catch (error) {
+        response.status(500).json(error);
+    }
+});
+
 router.get("/taxReport/:id", async (request, response) => {
     try {
         const taxReportData = await TaxReport.findByPk(request.params.id, {
@@ -86,7 +95,7 @@ router.get("/accountCreation", (request, response) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/taxInputs', withAuth, async (request, response) => {
+router.get("/taxOutputs", withAuth, async (request, response) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(request.session.user_id, {
@@ -96,7 +105,7 @@ router.get('/taxInputs', withAuth, async (request, response) => {
 
         const user = userData.get({ plain: true });
 
-        response.render('taxInputs', {
+        response.render("taxOutputs", {
             ...user,
             logged_in: true,
         });
