@@ -1,25 +1,78 @@
 <h2>Welcome, {{name}}!</h2>
 
-<div class="container mt-3">
-    <h2>Tax Reports</h2>
-    {{#if taxReports.length}}
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Year</th>
-                <th>Income</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each taxReports as |taxReport|}}
-                <tr>
-                    <td>{{taxReport.year}}</td>
-                    <td>{{taxReport.income}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
-        </table>
-    {{/if}}
+<div class="container container-fluid mt-3">
+  <h3 class="text-light mb-4">Edit Account Info</h3>
+  <form class="form form-group account-form">
+    <input type="hidden" id="id" value="{{id}}" />
+    <div class="row m-3">
+      <label for="email-edit" class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-10">
+        <input
+          type="text" readonly 
+          class="form-control-plaintext"
+          id="email-edit"
+          name="email"
+          value={{email}}
+        />
+      </div>
+    </div>
+    <div class="row m-3">
+      <label for="name-edit" class="col-sm-2 col-form-label">Name:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="name-edit"
+          placeholder="Name"
+          name="name"
+          required
+        />
+      </div>
+    </div>
+    <div class="row m-3">
+      <label
+        for="password-edit"
+        class="col-sm-2 col-form-label"
+      >Password:</label>
+      <div class="col-sm-10">
+        <input
+          type="password"
+          class="form-control"
+          id="password-edit"
+          placeholder="Password minimum: 8 characters"
+          name="pswd"
+          required
+        />
+      </div>
+    </div>
+    <div class="m-3 text-center">
+      <button class="btn btn-user full-width" type="submit">Save Edit</button>
+    </div>
+  </form>
 </div>
-<!-- account.js not ready yet -->
-<!--<script src="./js/account.js"></script>-->
+
+<div class="container container-fluid mt-3 row justify-content-center">
+  <h3 class="text-light mb-4">Tax Reports</h3>
+  {{#if taxReports.length}}
+    {{#each taxReports as |taxReport|}}
+      <div class="card col-md-3 m-3 tax-result">
+        <a href="/taxReport/{{taxReport.id}}">
+          <span class="taxSlot"></span>
+          <canvas class="card-img-top report-link" data-id="{{taxReport.id}}" alt="Tax Chart"></canvas>
+        </a>
+        <div class="card-body taxReport-list">
+          <h5 class="card-title inputYear">{{taxReport.year}}</h5>
+          <span class="tax-details inputIncome" value="{{taxReport.income}}">{{taxReport.income}}</span>
+          <button class="btn btn-user full-width del-btn"  data-id="{{taxReport.id}}" type="button">Delete</button>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <p class="text-empty">No Tax Records</p>
+  {{/if}}
+</div>
+
+<script src="./js/account.js"></script>
+<script src="./js/taxReport.js"></script>
+<script src="./js/taxInputs.js"></script>
+

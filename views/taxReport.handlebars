@@ -1,1 +1,50 @@
-<p>Posted by {{user.name}} on {{format_date date}} {{income}} {{year}}</p>
+<div class="container-fluid">
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <form class="edit-taxReport-form card">
+        <input type="hidden" id="id" value="{{id}}" />
+        <div class="card-body">
+          <h3 class="card-title">Tax Report</h3>
+          <p class="card-text">Fill in your tax information</p>
+          <div class="row mb-3">
+            <label for="inputYear" class="col-sm-5 col-form-label">Enter year:</label>
+            <div class="col-sm-7">
+              <input type="number" class="form-control" id="inputYear" value={{year}} required/>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputIncome" class="col-sm-5 col-form-label">Enter income:</label>
+            <div class="col-sm-7">
+              <input type="number" class="form-control" id="inputIncome" value={{income}} required/>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Edit</button>
+          <!--                    <div class="d-flex justify-content-between">
+                        <button type="button" id="submit" class="btn btn-primary">Submit</button>
+
+                    </div>-->
+        </div>
+      </form>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <td id="yearSlot"></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Federal Income Tax</th>
+              <td id="taxSlot"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/taxInputs.js"></script>

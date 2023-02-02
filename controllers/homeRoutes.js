@@ -27,9 +27,7 @@ router.get('/', async (request, response) => {
     }
 });
 
-
-
-router.get('/taxReport/:id', async (request, response) => {
+router.get('/taxReport/:id', withAuth, async (request, response) => {
     try {
         const taxReportData = await TaxReport.findByPk(request.params.id, {
             include: [

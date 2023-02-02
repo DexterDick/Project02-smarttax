@@ -1,5 +1,6 @@
 const User = require('./User');
 const TaxReport = require('./TaxReport');
+const TaxOutput = require('./TaxOutput');
 
 User.hasMany(TaxReport, {
     foreignKey: 'user_id',

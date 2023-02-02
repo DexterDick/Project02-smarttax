@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require("../../utils/auth");
 
 router.post('/', async (request, response) => {
     try {
-        const userData = await User.create(request.body);
+        const userData = await User.create({...request.body});
 
         request.session.save(() => {
             request.session.user_id = userData.id;
@@ -23,7 +24,7 @@ router.post('/login', async (request, response) => {
         if (!userData) {
             response
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect email, please try again' });
             return;
         }
 
@@ -55,6 +56,23 @@ router.post('/logout', (request, response) => {
         });
     } else {
         response.status(404).end();
+    }
+});
+
+router.put('/:id', withAuth, async (request, response) => {
+    try {
+        const userId = request.params.id;
+        const {name, password} = request.body;
+
+        const userData = await User.update({
+            name: name,
+            password: password
+        }, { where: {id: userId} });
+        
+        response.json({ user: userData, message:'User updated successfully!' });
+
+    }catch (error) {
+        response.status(500).json(error);
     }
 });
 
