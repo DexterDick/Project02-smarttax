@@ -37,6 +37,48 @@ const calFed = (income) => {
   return fedIncomeTax;
 };
 
+// Calculate ontario income tax
+const ontarioTax = async (event) => {
+    event.preventDefault();
+    let provIncomeTax = 0;
+    const provBrackets = [46226, 92454, 150000, 220000];
+    const provRates = [0.0505, 0.0915, 0.1116, 0.1216, 0.1316];
+    const year = $("#inputYear").val();
+    const income = $("#inputIncome").val();
+    if (income < provBrackets[0]) {
+        provIncomeTax += income * provRates[0];
+    } else if (income < provBrackets[1]) {
+        provIncomeTax += income * provRates[0];
+        provIncomeTax += (income - provBrackets[0]) * provRates[1];
+    } else if (income < provBrackets[2]) {
+        provIncomeTax += income * provRates[0];
+        provIncomeTax += (provBrackets[1] - provBrackets[0]) * provRates[1];
+        provIncomeTax += (income - provBrackets[1]) * provRates[2];
+    } else if (income < provBrackets[3]) {
+        provIncomeTax += income * provRates[0];
+        provIncomeTax += (provBrackets[1] - provBrackets[0]) * provRates[1];
+        provIncomeTax += (provBrackets[2] - provBrackets[1]) * provRates[2];
+        provIncomeTax += (income - provBrackets[2]) * provRates[3];
+    } else if (income < provBrackets[4]) {
+        provIncomeTax += income * provRates[0];
+        provIncomeTax += (provBrackets[1] - provBrackets[0]) * provRates[1];
+        provIncomeTax += (provBrackets[2] - provBrackets[1]) * provRates[2];
+        provIncomeTax += (provBrackets[3] - provBrackets[2]) * provRates[3];
+        provIncomeTax += (income - provBrackets[3]) * provRates[4];
+    }
+    $("#provTax").text(provIncomeTax);
+    if (year && income) {
+        const response = await fetch(`/api/taxReports`, {
+            method: "POST",
+            body: JSON.stringify({ year, income }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+    }
+};
+
+
 const display = (event) => {
   let fedIncomeTax = 0;
 
@@ -106,3 +148,5 @@ const reportFormHandler = async (event) => {
 $(".new-taxReport-form").submit(calculate);
 $(".edit-taxReport-form").submit(reportFormHandler);
 $(".tax-result").ready(display);
+$(".new-taxReport-form").submit(ontarioTax);
+$(".edit-taxReport-form").submit(ontarioTax);
