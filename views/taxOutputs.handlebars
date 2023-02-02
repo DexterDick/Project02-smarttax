@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    <h2>Tax Reports</h2>
+    {{#if taxReports.length}}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Year</th>
+            <th>Income</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each taxReports as |taxReport|}}
+            <tr>
+                <td>{{taxReport.year}}</td>
+                <td>{{taxReport.income}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
+</div>
