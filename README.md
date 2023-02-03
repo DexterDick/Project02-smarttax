@@ -26,9 +26,12 @@ This project can be used to generate tax reports based on user data. The applica
 
 ## Screeenshots
 
-![alt text](image.jpg)
-![alt text](image.jpg)
-![alt text](image.jpg)
+![Home page](./public/images/captures_chrome-capture-2023-1-2-1.png)
+![Login page](./public/images/captures_chrome-capture-2023-1-2-2.png)
+![Signup page](./public/images/captures_chrome-capture-2023-1-2-3.png)
+![Tax Report page](./public/images/captures_chrome-capture-2023-1-2-4.png)
+![Account page](./public/images/captures_chrome-capture-2023-1-2-5.png)
+![Eddit Tax Report page](./public/images/captures_chrome-capture-2023-1-2-6.png)
 
 ## Contributing
 
