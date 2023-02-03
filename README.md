@@ -1,4 +1,4 @@
-# Project02
+# Project02 - SmartTax Application 
 
 ## Description
 
