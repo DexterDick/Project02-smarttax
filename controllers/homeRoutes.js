@@ -27,6 +27,7 @@ router.get('/', async (request, response) => {
     }
 });
 
+// Use withAuth middleware to prevent access to route
 router.get('/taxReport/:id', withAuth, async (request, response) => {
     try {
         const taxReportData = await TaxReport.findByPk(request.params.id, {

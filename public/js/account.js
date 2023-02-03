@@ -1,3 +1,4 @@
+// Hanlde account name and password updates
 const accountFormHandler = async (event) => {
     event.preventDefault();
 
@@ -5,7 +6,6 @@ const accountFormHandler = async (event) => {
     const password = document.querySelector('#password-edit').value.trim();
     const id = document.querySelector('#id').value;
 
-    console.log(name,password);
     if (name && password) {
         const response = await fetch(`/api/users/${id}`, {
             method: 'PUT',

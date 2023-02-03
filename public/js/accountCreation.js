@@ -1,3 +1,4 @@
+// Hanlde account creation with name, email, and password
 const signupFormHandler = async (event) => {
     event.preventDefault();
 

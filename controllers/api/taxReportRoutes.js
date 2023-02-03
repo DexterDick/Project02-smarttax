@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { TaxReport } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Create a tax report
 router.post('/', withAuth, async (request, response) => {
     try {
         const newTaxReport = await TaxReport.create({
@@ -19,6 +20,7 @@ router.post('/', withAuth, async (request, response) => {
     }
 });
 
+// Delete a tax report based on id
 router.delete('/:id', withAuth, async (request, response) => {
     try {
         const taxReportData = await TaxReport.destroy({
@@ -39,7 +41,9 @@ router.delete('/:id', withAuth, async (request, response) => {
     }
 });
 
-router.put('/:id', async (request, response) => {
+// Update a tax report based on id
+router.put('/:id', withAuth, async (request, response) => {
+    console.log(request.body);
     try {
         const reportId = request.params.id;
         const {year, income} = request.body;

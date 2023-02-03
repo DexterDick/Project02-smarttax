@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require("../../utils/auth");
 
+// Create a user
 router.post('/', async (request, response) => {
     try {
         const userData = await User.create({...request.body});
@@ -17,6 +18,7 @@ router.post('/', async (request, response) => {
     }
 });
 
+// User Login
 router.post('/login', async (request, response) => {
     try {
         const userData = await User.findOne({ where: { email: request.body.email } });
@@ -49,6 +51,7 @@ router.post('/login', async (request, response) => {
     }
 });
 
+// User Logout
 router.post('/logout', (request, response) => {
     if (request.session.logged_in) {
         request.session.destroy(() => {
@@ -59,6 +62,7 @@ router.post('/logout', (request, response) => {
     }
 });
 
+// Update user acount info based on id
 router.put('/:id', withAuth, async (request, response) => {
     try {
         const userId = request.params.id;
